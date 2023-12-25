@@ -2,7 +2,7 @@ import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
 
-from app import create_app
+from main import create_app
 from model import setup_for_db
 
 EXECUTIVE_PRODUCER_JWT_TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlMzWHFpSDdMYkNMSnJ2VldlRWRVayJ9.eyJpc3MiOiJodHRwczovL2Rldi0zOHoxaTdyY2kxeW15MGI1LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NTg5N2FhMTRiNWY2YTM3M2U0OGZiOTAiLCJhdWQiOiJGU05ELWNhcHN0b25lIiwiaWF0IjoxNzAzNTExNjM1LCJleHAiOjE3MDM1OTgwMzUsImF6cCI6IkVzSk45Q29IS2hCb2FpUmR2ejV3WmN2bjQ1YzR2UmZzIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.NFFk68ypKqqb_2SFZzS53Jh7ZuWK3PQfTUS5VQArPLQFrfCZzzDY01agxM6JNkD5UkDXFDDysDXnV68PCY85HCUdDjRDyseytupq5tLiVflA1BXLmiqinAUwfwZbrId3NfZFZ6xWc9hmrh38YfVaBzkslB0iUmK6g3_KT6EUtzXClpGQlmtmCXvY56Scz2XBpsFW2CphE_q4jKiVXqRK0F84qHxk1BzwyDrVxDnhFLnRo5BiANNlHodyX9ig6zZ240nne7X8JaXSAIXXXsd1zHqk8y8oZNEA-D6aTD_A5yGWEXyGc_sAssQDdOr3PUKmrjc936nrxUILLgthR52uNw'
@@ -85,7 +85,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
-    def test_400_failed_create_movie(self):
+    def test_failed_create_movie_400(self):
         res = self.client().post('/movies', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
@@ -112,7 +112,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
-    def test_404_failed_update_movie(self):
+    def test_failed_update_movie_404(self):
         res = self.client().patch('/movies/771', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
@@ -128,7 +128,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
         self.assertTrue(data['deleted'])
 
-    def test_404_delete_an_movie(self):
+    def test_delete_an_movie_404(self):
         res = self.client().delete('/movies/711', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
@@ -153,7 +153,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
-    def test_400_failed_create_actor(self):
+    def test_failed_create_actor_400(self):
         res = self.client().post('/actors', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
@@ -182,7 +182,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
 
-    def test_404_failed_update_actor(self):
+    def test_failed_update_actor_404(self):
         res = self.client().patch('/actors/771', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
@@ -198,7 +198,7 @@ class FSNDSTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
         self.assertTrue(data['deleted'])
 
-    def test_404_delete_an_actor(self):
+    def test_delete_an_acto_404(self):
         res = self.client().delete('/actors/711', headers=PRODUCER_HEADERS)
         data = json.loads(res.data)
 
