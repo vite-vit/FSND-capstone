@@ -44,17 +44,17 @@ class FSNDSTestCase(unittest.TestCase):
         self.client().post('/movies', json=request_body, headers=PRODUCER_HEADERS)
 
         request_body = {
-            "name": "Le Thi An",
-            "age": 18,
-            "gender": "female",
+            "gender": "male",
+            "name": "Truong Hoang Viet",
+            "age": 20,
             "movie_id": 1
         }
         self.client().post('/actors', json=request_body, headers=PRODUCER_HEADERS)
 
         request_body = {
-            "name": "Le Thi An",
-            "age": 18,
-            "gender": "female",
+            "gender": "male",
+            "name": "Truong Hoang Viet",
+            "age": 20,
             "movie_id": 1
         }
         self.client().post('/actors', json=request_body, headers=PRODUCER_HEADERS)
@@ -142,9 +142,9 @@ class FSNDSTestCase(unittest.TestCase):
 
     def test_create_actor(self):
         request_body = {
-            "name": "Le Thi An",
-            "age": 18,
-            "gender": "female",
+            "gender": "male",
+            "name": "Truong Hoang Viet",
+            "age": 20,
             "movie_id": 1
         }
         res = self.client().post('/actors', json=request_body, headers=PRODUCER_HEADERS)
@@ -171,9 +171,9 @@ class FSNDSTestCase(unittest.TestCase):
 
     def test_update_actor(self):
         request_body = {
-            "name": "Le Thi An",
-            "age": 18,
-            "gender": "female",
+            "gender": "male",
+            "name": "Truong Hoang Viet",
+            "age": 20,
             "movie_id": 1
         }
         res = self.client().patch('/actors/1', json=request_body, headers=PRODUCER_HEADERS)
