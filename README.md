@@ -101,7 +101,7 @@ https://dev-38z1i7rci1ymy0b5.us.auth0.com/authorize?audience=FSND-capstone&respo
 ```
 
 Executive Producer account:
-
+which have full permissions
 ```
 # Email
 executive_producer_1@gmail.com
@@ -110,6 +110,9 @@ executive_producer_1@gmail.com
 ```
 
 Casting Director account:
+Can view actors and movies
+Add or delete an actor from the database
+Modify actors or movies
 
 ```
 # Email
@@ -119,7 +122,7 @@ casting_director_1@gmail.com
 ```
 
 Casting Assistant account:
-
+Can view actors and movies
 ```
 # Email
 casting_assistant_1@gmail.com
